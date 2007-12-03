@@ -1,0 +1,178 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Release;
+		activeExecutable = 797AE2ED0D04717600F3EB50 /* CalendarStoreSpike */;
+		activeTarget = 8D1107260486CEB800E47090 /* CalendarStoreSpike */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* CalendarStoreSpike */,
+		);
+		codeSenseManager = 797AE2FC0D04718200F3EB50 /* Code sense */;
+		executables = (
+			797AE2ED0D04717600F3EB50 /* CalendarStoreSpike */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					185,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 218394998;
+			PBXWorkspaceStateSaveDate = 218394998;
+		};
+		perUserProjectItems = {
+			797AE30F0D04722800F3EB50 /* PBXBookmark */ = 797AE30F0D04722800F3EB50 /* PBXBookmark */;
+			797AE31A0D048AB200F3EB50 /* PBXTextBookmark */ = 797AE31A0D048AB200F3EB50 /* PBXTextBookmark */;
+			797AE31B0D048AB200F3EB50 /* PBXTextBookmark */ = 797AE31B0D048AB200F3EB50 /* PBXTextBookmark */;
+			797AE31E0D048AB200F3EB50 /* PBXTextBookmark */ = 797AE31E0D048AB200F3EB50 /* PBXTextBookmark */;
+			797AE31F0D048AB200F3EB50 /* PBXTextBookmark */ = 797AE31F0D048AB200F3EB50 /* PBXTextBookmark */;
+			797AE3220D048AB200F3EB50 /* PBXTextBookmark */ = 797AE3220D048AB200F3EB50 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 797AE2FB0D04718200F3EB50 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	797AE2ED0D04717600F3EB50 /* CalendarStoreSpike */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = CalendarStoreSpike;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	797AE2FB0D04718200F3EB50 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	797AE2FC0D04718200F3EB50 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	797AE3070D04721000F3EB50 /* CalCalendarStore.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		path = CalCalendarStore.h;
+		sourceTree = "<group>";
+	};
+	797AE30F0D04722800F3EB50 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 797AE3070D04721000F3EB50 /* CalCalendarStore.h */;
+	};
+	797AE3100D04728F00F3EB50 /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 804}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 217}";
+			sepNavWindowFrame = "{{1323, 194}, {1131, 908}}";
+		};
+	};
+	797AE3110D04728F00F3EB50 /* AppController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {955, 640}}";
+			sepNavSelRange = "{486, 0}";
+			sepNavVisRange = "{0, 598}";
+			sepNavWindowFrame = "{{1210, 120}, {1014, 744}}";
+		};
+	};
+	797AE31A0D048AB200F3EB50 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 797AE3110D04728F00F3EB50 /* AppController.m */;
+		rLen = 0;
+		rLoc = 2147484037;
+		rType = 0;
+	};
+	797AE31B0D048AB200F3EB50 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 797AE3110D04728F00F3EB50 /* AppController.m */;
+		name = "AppController.m: 19";
+		rLen = 0;
+		rLoc = 486;
+		rType = 0;
+		vrLen = 598;
+		vrLoc = 0;
+	};
+	797AE31E0D048AB200F3EB50 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 797AE3100D04728F00F3EB50 /* AppController.h */;
+		rLen = 0;
+		rLoc = 2147483647;
+		rType = 0;
+	};
+	797AE31F0D048AB200F3EB50 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 797AE3100D04728F00F3EB50 /* AppController.h */;
+		name = "AppController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 217;
+		vrLoc = 0;
+	};
+	797AE3220D048AB200F3EB50 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 797AE3230D048AB200F3EB50 /* CalCalendarStore.h */;
+		name = "CalCalendarStore.h: 115";
+		rLen = 78;
+		rLoc = 5582;
+		rType = 0;
+		vrLen = 3375;
+		vrLoc = 3240;
+	};
+	797AE3230D048AB200F3EB50 /* CalCalendarStore.h */ = {
+		isa = PBXFileReference;
+		name = CalCalendarStore.h;
+		path = /System/Library/Frameworks/CalendarStore.framework/Headers/CalCalendarStore.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 2954}}";
+			sepNavSelRange = "{5582, 78}";
+			sepNavVisRange = "{3240, 3375}";
+			sepNavWindowFrame = "{{1089, 274}, {1131, 908}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* CalendarStoreSpike */ = {
+		activeExec = 0;
+		executables = (
+			797AE2ED0D04717600F3EB50 /* CalendarStoreSpike */,
+		);
+	};
+}
