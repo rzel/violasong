@@ -49,6 +49,8 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 @implementation iTunesScroller
 
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
+    NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
+    
 	NSRect partRect = [self rectForPart:part];
 	NSEraseRect(partRect);
 	[[NSColor orangeColor] set];
@@ -59,10 +61,7 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 }
 
 - (void)drawArrow:(NSScrollerArrow)arrow highlightPart:(NSScrollerArrow)highlightPart {
-	//NSLog(@"drawArrow:%@ highlightPart:%@", NSScrollerArrowDescription(arrow), NSScrollerArrowDescription(part));
-	//[super drawArrow:arrow highlightPart:part];
-	//if (part == -1)
-	//	NSLog(@" ");
+	NSLog(@"drawArrow:%@ highlightPart:%@", NSScrollerArrowDescription(arrow), NSScrollerArrowDescription(highlightPart));
 	
 	switch (highlightPart) {
 		case -1:
@@ -80,7 +79,6 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 
 - (void)drawKnob {
 	//NSLog(@"drawKnob");
-	//[super drawKnob];
 	
 	//[[NSColor blueColor] set];
 	//NSRectFill([self rectForPart:NSScrollerKnob]);
