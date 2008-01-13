@@ -27,10 +27,10 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* iTunesScrollerDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesScrollerDemo_Prefix.pch; sourceTree = "<group>"; };
 		79323EA90D3ACCC2003A6A07 /* disassemblingosx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = disassemblingosx.jpg; sourceTree = "<group>"; };
-		79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunesScroller.h; path = ../iTunesScroller.h; sourceTree = "<group>"; };
-		79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iTunesScroller.m; path = ../iTunesScroller.m; sourceTree = "<group>"; };
-		79323EAF0D3ACD84003A6A07 /* iTunesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunesScrollView.h; path = ../iTunesScrollView.h; sourceTree = "<group>"; };
-		79323EB00D3ACD84003A6A07 /* iTunesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iTunesScrollView.m; path = ../iTunesScrollView.m; sourceTree = "<group>"; };
+		79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunesScroller.h; path = ../iTunesScroller.h; sourceTree = SOURCE_ROOT; };
+		79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iTunesScroller.m; path = ../iTunesScroller.m; sourceTree = SOURCE_ROOT; };
+		79323EAF0D3ACD84003A6A07 /* iTunesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunesScrollView.h; path = ../iTunesScrollView.h; sourceTree = SOURCE_ROOT; };
+		79323EB00D3ACD84003A6A07 /* iTunesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iTunesScrollView.m; path = ../iTunesScrollView.m; sourceTree = SOURCE_ROOT; };
 		795A7F90099D0E3600450061 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		795A7F91099D0E3600450061 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
 		};
@@ -262,7 +262,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Release;
 		};

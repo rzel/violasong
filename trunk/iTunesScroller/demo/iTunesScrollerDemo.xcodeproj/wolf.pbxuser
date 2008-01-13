@@ -35,17 +35,31 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 221956819;
-			PBXWorkspaceStateSaveDate = 221956819;
+			PBXPerProjectTemplateStateSaveDate = 221958293;
+			PBXWorkspaceStateSaveDate = 221958293;
 		};
 		perUserProjectItems = {
-			79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */ = 79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */;
-			79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */ = 79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */;
-			79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */ = 79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */;
-			79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */ = 79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */;
+			7954FCA60D3AD37300957FF1 /* PBXBookmark */ = 7954FCA60D3AD37300957FF1 /* PBXBookmark */;
+			7954FCAB0D3AD39800957FF1 /* PBXTextBookmark */ = 7954FCAB0D3AD39800957FF1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 79323E990D3ACA4B003A6A07 /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 656}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 121}";
+			sepNavWindowFrame = "{{61, 221}, {959, 760}}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* iTunesScrollerDemo_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 656}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 167}";
+			sepNavWindowFrame = "{{84, 200}, {959, 760}}";
 		};
 	};
 	79323E930D3ACA48003A6A07 /* iTunesScrollerDemo */ = {
@@ -93,51 +107,41 @@
 	};
 	79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 1386}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1283}";
+			sepNavIntBoundsRect = "{{0, 0}, {900, 1372}}";
+			sepNavSelRange = "{1641, 198}";
+			sepNavVisRange = "{1075, 1325}";
 			sepNavWindowFrame = "{{125, 154}, {959, 760}}";
 		};
 	};
-	79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */ = {
+	7954FCA60D3AD37300957FF1 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */;
+	};
+	7954FCAB0D3AD39800957FF1 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */;
-		name = "iTunesScroller.m: 4";
-		rLen = 87;
-		rLoc = 65;
+		name = "iTunesScroller.m: 62";
+		rLen = 198;
+		rLoc = 1641;
 		rType = 0;
-		vrLen = 1283;
-		vrLoc = 0;
+		vrLen = 1325;
+		vrLoc = 1075;
 	};
-	79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */;
-		name = "iTunesScroller.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 72;
-		vrLoc = 0;
+	795A7F90099D0E3600450061 /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 656}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 69}";
+			sepNavWindowFrame = "{{15, 263}, {959, 760}}";
+		};
 	};
-	79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */;
-		name = "iTunesScroller.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1283;
-		vrLoc = 0;
-	};
-	79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */;
-		name = "iTunesScroller.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 72;
-		vrLoc = 0;
+	795A7F91099D0E3600450061 /* AppController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 656}}";
+			sepNavSelRange = "{128, 0}";
+			sepNavVisRange = "{0, 137}";
+			sepNavWindowFrame = "{{38, 242}, {959, 760}}";
+		};
 	};
 	8D1107260486CEB800E47090 /* iTunesScrollerDemo */ = {
 		activeExec = 0;
