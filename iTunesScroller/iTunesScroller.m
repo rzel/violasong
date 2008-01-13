@@ -1,6 +1,7 @@
 #import "iTunesScroller.h"
 
 @interface NSScroller (undocumented)
++ (void)_drawEndCapInRect:(NSRect)rect;
 - (void)drawArrow:(NSScrollerArrow)arrow highlightPart:(NSScrollerArrow)highlightPart;
 - (void)drawKnobSlotInRect:(NSRect)rect highlight:(BOOL)flag;
 @end
@@ -48,8 +49,13 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 
 @implementation iTunesScroller
 
+- (BOOL)isVertical {
+    NSRect bounds = [self bounds];
+    return NSHeight(bounds) < NSWidth(bounds);
+}
+
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
-    NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
+    //NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
     
 	NSRect partRect = [self rectForPart:part];
 	NSEraseRect(partRect);
@@ -61,7 +67,7 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 }
 
 - (void)drawArrow:(NSScrollerArrow)arrow highlightPart:(NSScrollerArrow)highlightPart {
-	NSLog(@"drawArrow:%@ highlightPart:%@", NSScrollerArrowDescription(arrow), NSScrollerArrowDescription(highlightPart));
+	//NSLog(@"drawArrow:%@ highlightPart:%@", NSScrollerArrowDescription(arrow), NSScrollerArrowDescription(highlightPart));
 	
 	switch (highlightPart) {
 		case -1:
@@ -85,11 +91,15 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 	[self drawPart:NSScrollerKnob highlight:NO];
 }
 
-- (void)drawKnobSlotInRect:(NSRect)rect highlight:(BOOL)flag {
+- (void)drawKnobSlotInRect:(NSRect)rect highlight:(BOOL)highlight_ {
+    NSAssert(!highlight_, @"apparently -drawKnobSlotInRect:highlight:'s highlight IS sometimes set");
 	//NSLog(@"drawKnobSlotInRect:highlight:%d", flag);
-	//[super drawKnobSlotInRect:rect highlight:flag];
 	
-	[[NSColor lightGrayColor] set];
+    if ([self isVertical]) {
+        [[NSColor lightGrayColor] set];
+    } else {
+        [[NSColor blueColor] set];
+    }
 	NSRectFill(rect);
 }
 
