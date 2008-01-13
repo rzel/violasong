@@ -1,0 +1,148 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 79323E930D3ACA48003A6A07 /* iTunesScrollerDemo */;
+		activeTarget = 8D1107260486CEB800E47090 /* iTunesScrollerDemo */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* iTunesScrollerDemo */,
+		);
+		codeSenseManager = 79323E9A0D3ACA4B003A6A07 /* Code sense */;
+		executables = (
+			79323E930D3ACA48003A6A07 /* iTunesScrollerDemo */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 221956819;
+			PBXWorkspaceStateSaveDate = 221956819;
+		};
+		perUserProjectItems = {
+			79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */ = 79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */;
+			79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */ = 79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */;
+			79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */ = 79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */;
+			79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */ = 79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 79323E990D3ACA4B003A6A07 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	79323E930D3ACA48003A6A07 /* iTunesScrollerDemo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iTunesScrollerDemo;
+		sourceDirectories = (
+		);
+	};
+	79323E990D3ACA4B003A6A07 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	79323E9A0D3ACA4B003A6A07 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 656}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 72}";
+			sepNavWindowFrame = "{{104, 184}, {959, 760}}";
+		};
+	};
+	79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 1386}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1283}";
+			sepNavWindowFrame = "{{125, 154}, {959, 760}}";
+		};
+	};
+	79323EBF0D3ACEBC003A6A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */;
+		name = "iTunesScroller.m: 4";
+		rLen = 87;
+		rLoc = 65;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 0;
+	};
+	79323EC30D3ACEBC003A6A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */;
+		name = "iTunesScroller.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 72;
+		vrLoc = 0;
+	};
+	79323ED20D3ACF8A003A6A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 79323EAE0D3ACD84003A6A07 /* iTunesScroller.m */;
+		name = "iTunesScroller.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 0;
+	};
+	79323ED30D3ACF8A003A6A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 79323EAD0D3ACD84003A6A07 /* iTunesScroller.h */;
+		name = "iTunesScroller.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 72;
+		vrLoc = 0;
+	};
+	8D1107260486CEB800E47090 /* iTunesScrollerDemo */ = {
+		activeExec = 0;
+		executables = (
+			79323E930D3ACA48003A6A07 /* iTunesScrollerDemo */,
+		);
+	};
+}
