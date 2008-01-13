@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>79323EBD0D3ACEBC003A6A07</string>
+				<string>7954FCA90D3AD39800957FF1</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>iTunesScroller.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>79323EBE0D3ACEBC003A6A07</string>
+						<string>7954FCAA0D3AD39800957FF1</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>iTunesScroller.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>79323ED20D3ACF8A003A6A07</string>
+						<string>7954FCAB0D3AD39800957FF1</string>
 						<key>history</key>
 						<array>
-							<string>79323EBF0D3ACEBC003A6A07</string>
+							<string>7954FCA60D3AD37300957FF1</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -236,46 +236,6 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>125 186 959 728 0 0 1680 1028 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>79323EC10D3ACEBC003A6A07</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>iTunesScroller.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>79323EC20D3ACEBC003A6A07</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>iTunesScroller.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>79323ED30D3ACF8A003A6A07</string>
-						<key>history</key>
-						<array>
-							<string>79323EC30D3ACEBC003A6A07</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {959, 687}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>104 216 959 728 0 0 1680 1028 </string>
 			</dict>
 		</dict>
 	</array>
@@ -349,14 +309,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>9</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -461,9 +421,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>79323EA00D3ACADB003A6A07</string>
+				<string>7954FCA70D3AD39800957FF1</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>79323EA10D3ACADB003A6A07</string>
+				<string>7954FCA80D3AD39800957FF1</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -597,11 +557,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>79323EC10D3ACEBC003A6A07</string>
 		<string>79323EC50D3ACEBC003A6A07</string>
-		<string>79323EBD0D3ACEBC003A6A07</string>
+		<string>7954FCA90D3AD39800957FF1</string>
 		<string>/Users/wolf/code/ext/violasong/iTunesScroller/demo/iTunesScrollerDemo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -626,7 +583,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iTunesScroller.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -643,8 +600,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -684,7 +639,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>79323EC50D3ACEBC003A6A07</string>
-				<string>79323EC60D3ACEBC003A6A07</string>
+				<string>7954FCAC0D3AD39800957FF1</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -695,7 +650,7 @@
 			<key>WindowToolGUID</key>
 			<string>79323EC50D3ACEBC003A6A07</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
