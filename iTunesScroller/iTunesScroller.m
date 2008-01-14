@@ -63,17 +63,50 @@ if (highlight) {
 }
 #endif
 
-static void drawFlippedUpArrow(NSRect rect) {
+typedef enum {
+    Up,
+    Down,
+    Left,
+    Right
+}   ArrowDirection;
+
+static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
     float flippedTop = NSMinY(rect);
 	float left = NSMinX(rect);
 	float flippedBottom = NSMaxY(rect);
 	float right = NSMaxX(rect);
     
     NSBezierPath *path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(left, flippedBottom)];
-    [path lineToPoint:NSMakePoint(left + ((right - left)/2), flippedTop)];
-    [path lineToPoint:NSMakePoint(right, flippedBottom)];
-    [path lineToPoint:NSMakePoint(left, flippedBottom)];
+    
+    switch (direction) {
+        case Up:
+            [path moveToPoint:NSMakePoint(left, flippedBottom)];
+            [path lineToPoint:NSMakePoint(left + ((right - left)/2), flippedTop)];
+            [path lineToPoint:NSMakePoint(right, flippedBottom)];
+            [path lineToPoint:NSMakePoint(left, flippedBottom)];
+            break;
+        case Down:
+            [path moveToPoint:NSMakePoint(left, flippedTop)];
+            [path lineToPoint:NSMakePoint(left + ((right - left)/2), flippedBottom)];
+            [path lineToPoint:NSMakePoint(right, flippedTop)];
+            [path lineToPoint:NSMakePoint(left, flippedTop)];
+            break;
+        case Left:
+            [path moveToPoint:NSMakePoint(right, flippedBottom)];
+            [path lineToPoint:NSMakePoint(left, flippedTop + ((flippedBottom - flippedTop)/2))];
+            [path lineToPoint:NSMakePoint(right, flippedTop)];
+            [path lineToPoint:NSMakePoint(right, flippedBottom)];
+            break;
+        case Right:
+            [path moveToPoint:NSMakePoint(left, flippedBottom)];
+            [path lineToPoint:NSMakePoint(right, flippedTop + ((flippedBottom - flippedTop)/2))];
+            [path lineToPoint:NSMakePoint(left, flippedTop)];
+            [path lineToPoint:NSMakePoint(left, flippedBottom)];
+            break;
+        default:
+            NSCAssert1(NO, @"unknown ArrowDirection: %d", direction);
+    }
+    
     [path closePath];
     [path fill];
 }
@@ -90,19 +123,23 @@ static void drawFlippedUpArrow(NSRect rect) {
             NSRectFill(partRect);
         }   break;
         case NSScrollerIncrementLine: {
+            NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Right arrow.
+                drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Right);
             } else {
                 //  Down arrow.
+                drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Down);
             }
         }   break;
         case NSScrollerDecrementLine: {
+            NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Left arrow.
+                drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Left);
             } else {
                 //  Up arrow.
-                NSEraseRect(partRect);
-                drawFlippedUpArrow(NSInsetRect(partRect, 4., 4.));
+                drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Up);
             }
         }   break;
         case NSScrollerKnobSlot: {
