@@ -198,7 +198,6 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             NSRectFill(partRect);
         }   break;
         case NSScrollerIncrementLine: {
-            //NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Right arrow.
                 drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Right);
@@ -208,7 +207,6 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             }
         }   break;
         case NSScrollerDecrementLine: {
-            //NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Left arrow.
                 drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Left);
@@ -224,33 +222,19 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             NSRectFill(partRect);
 #else
             partRect = [self bounds];
-            if ([self isVertical]) {
-               NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
-										 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
-										 [NSColor colorWithDeviceRed:(186.0/255.0) green:(186/255.0) blue:(186/255.0) alpha:1.0], 0.06,
-										 [NSColor colorWithDeviceRed:(219.0/255.0) green:(219/255.0) blue:(219/255.0) alpha:1.0], 0.2,
-										 [NSColor colorWithDeviceRed:(230.0/255.0) green:(230/255.0) blue:(230/255.0) alpha:1.0], 0.33,
-										 [NSColor colorWithDeviceRed:(240.0/255.0) green:(240/255.0) blue:(240/255.0) alpha:1.0], 0.66,
-										 [NSColor colorWithDeviceRed:(223.0/255.0) green:(223/255.0) blue:(223/255.0) alpha:1.0], 0.8,
-										 [NSColor colorWithDeviceRed:(204.0/255.0) green:(204/255.0) blue:(204/255.0) alpha:1.0], 0.86,
-										 [NSColor colorWithDeviceRed:(178.0/255.0) green:(178/255.0) blue:(178/255.0) alpha:1.0], 1.0,
-										 nil                                                   										 
-										 ] autorelease];
-                [gradient drawInRect:partRect angle:90.];
-            } else {
-                NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
-										 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
-										 [NSColor colorWithDeviceRed:(186.0/255.0) green:(186/255.0) blue:(186/255.0) alpha:1.0], 0.06,
-										 [NSColor colorWithDeviceRed:(219.0/255.0) green:(219/255.0) blue:(219/255.0) alpha:1.0], 0.2,
-										 [NSColor colorWithDeviceRed:(230.0/255.0) green:(230/255.0) blue:(230/255.0) alpha:1.0], 0.33,
-										 [NSColor colorWithDeviceRed:(240.0/255.0) green:(240/255.0) blue:(240/255.0) alpha:1.0], 0.66,
-										 [NSColor colorWithDeviceRed:(223.0/255.0) green:(223/255.0) blue:(223/255.0) alpha:1.0], 0.8,
-										 [NSColor colorWithDeviceRed:(204.0/255.0) green:(204/255.0) blue:(204/255.0) alpha:1.0], 0.86,
-										 [NSColor colorWithDeviceRed:(178.0/255.0) green:(178/255.0) blue:(178/255.0) alpha:1.0], 1.0,
-										 nil                                                   										 
-										 ] autorelease];
-                [gradient drawInRect:partRect angle:0.];
-            }
+            
+            NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
+                                 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
+                                 [NSColor colorWithDeviceRed:(186.0/255.0) green:(186/255.0) blue:(186/255.0) alpha:1.0], 0.067,
+                                 [NSColor colorWithDeviceRed:(219.0/255.0) green:(219/255.0) blue:(219/255.0) alpha:1.0], 0.2,
+                                 [NSColor colorWithDeviceRed:(230.0/255.0) green:(230/255.0) blue:(230/255.0) alpha:1.0], 0.333,
+                                 [NSColor colorWithDeviceRed:(240.0/255.0) green:(240/255.0) blue:(240/255.0) alpha:1.0], 0.667,
+                                 [NSColor colorWithDeviceRed:(223.0/255.0) green:(223/255.0) blue:(223/255.0) alpha:1.0], 0.8,
+                                 [NSColor colorWithDeviceRed:(204.0/255.0) green:(204/255.0) blue:(204/255.0) alpha:1.0], 0.867,
+                                 [NSColor colorWithDeviceRed:(178.0/255.0) green:(178/255.0) blue:(178/255.0) alpha:1.0], 1.0,
+                                 nil
+                                 ] autorelease];
+            [gradient drawInRect:partRect angle:[self isVertical] ? 90. : 0.];
 #endif
         }   break;
         case NSScrollerNoPart:
