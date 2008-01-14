@@ -64,19 +64,18 @@ if (highlight) {
 #endif
 
 static void drawFlippedUpArrow(NSRect rect) {
-    float top = NSMinY(rect);
+    float flippedTop = NSMinY(rect);
 	float left = NSMinX(rect);
-	float bottom = NSMaxY(rect);
+	float flippedBottom = NSMaxY(rect);
 	float right = NSMaxX(rect);
     
     NSBezierPath *path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(left, bottom)];
-    [path lineToPoint:NSMakePoint(left + ((right - left)/2), top)];
-    [path lineToPoint:NSMakePoint(right, bottom)];
-    [path lineToPoint:NSMakePoint(left, bottom)];
+    [path moveToPoint:NSMakePoint(left, flippedBottom)];
+    [path lineToPoint:NSMakePoint(left + ((right - left)/2), flippedTop)];
+    [path lineToPoint:NSMakePoint(right, flippedBottom)];
+    [path lineToPoint:NSMakePoint(left, flippedBottom)];
     [path closePath];
-    [path setLineWidth:0.5];
-    [path stroke];
+    [path fill];
 }
 
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
