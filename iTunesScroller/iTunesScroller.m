@@ -144,6 +144,10 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
         }   break;
         case NSScrollerKnobSlot: {
             NSAssert(!highlight, nil); // I never expect this to be set.
+#if 1
+            [[NSColor darkGrayColor] set];
+            NSRectFill(partRect);
+#else
             if ([self isVertical]) {
                 NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
                                                                       endingColor:[NSColor whiteColor]] autorelease];
@@ -153,6 +157,7 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
                                                                       endingColor:[NSColor whiteColor]] autorelease];
                 [gradient drawInRect:partRect angle:0.];
             }
+#endif
         }   break;
         case NSScrollerNoPart:
         case NSScrollerIncrementPage:
