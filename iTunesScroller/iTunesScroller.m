@@ -73,10 +73,6 @@ if (highlight) {
             assert(!highlight); // TODO FIXME I don't know who sets this yet, but I haven't seen it happen yet. It *should*.
             [[NSColor colorWithDeviceRed:0. green:0. blue:255/128 alpha:1.0] set];
             NSRectFill(partRect);
-        }   break; {
-            NSAssert(NO, "-[iTunesScroller drawPart:%@ highlight:] => no implementation: this w"); // Seemingly never called
-        }   break; {
-            NSAssert(NO, "NSScrollerIncrementPage"); // Seemingly never called
         }   break;
         case NSScrollerIncrementLine: {
             if ([self isVertical]) {
@@ -105,9 +101,9 @@ if (highlight) {
             }
         }   break;
         case NSScrollerNoPart:
-        case NSScrollerDecrementPage:
         case NSScrollerIncrementPage:
-            NSAssert(NO, "-[iTunesScroller drawPart:%@ highlight:] => unexpected drawPart.", NSScrollerPartDescription(part));
+        case NSScrollerDecrementPage:
+            NSAssert1(NO, @"-[iTunesScroller drawPart:%@ highlight:] => unexpected drawPart.", NSScrollerPartDescription(part));
             break;
         default:
             NSAssert2(NO, @"unknown NSScrollerPart: %d (%@)", part, NSScrollerPartDescription(part));
