@@ -198,7 +198,7 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             NSRectFill(partRect);
         }   break;
         case NSScrollerIncrementLine: {
-            NSEraseRect(partRect);
+            //NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Right arrow.
                 drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Right);
@@ -208,7 +208,7 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             }
         }   break;
         case NSScrollerDecrementLine: {
-            NSEraseRect(partRect);
+            //NSEraseRect(partRect);
             if ([self isVertical]) {
                 //  Left arrow.
                 drawFlippedArrow(NSInsetRect(partRect, 4., 4.), Left);
@@ -223,6 +223,7 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             [[NSColor darkGrayColor] set];
             NSRectFill(partRect);
 #else
+            partRect = [self bounds];
             if ([self isVertical]) {
                NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
 										 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
