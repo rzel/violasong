@@ -158,8 +158,30 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
 
 - (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
-    [[NSColor colorWithDeviceRed:0. green:0. blue:0. alpha:0.35] set];
-     NSFrameRectWithWidthUsingOperation([self bounds], 1.0, NSCompositeSourceOver);
+    [[NSColor colorWithDeviceRed:0.51 green:0.51 blue:0.51 alpha:0.35] set];
+    
+    float flippedTop = NSMinY(rect);
+	float left = NSMinX(rect);
+	float flippedBottom = NSMaxY(rect);
+	float right = NSMaxX(rect);
+    
+    NSBezierPath *path1 = [NSBezierPath bezierPath];
+    NSBezierPath *path2 = [NSBezierPath bezierPath];
+    if ([self isVertical]) {
+        [path1 moveToPoint:NSMakePoint(left, flippedTop)];
+        [path1 lineToPoint:NSMakePoint(right, flippedTop)];
+        [path2 moveToPoint:NSMakePoint(left, flippedBottom)];
+        [path2 lineToPoint:NSMakePoint(right, flippedBottom)];
+    } else {
+        [path1 moveToPoint:NSMakePoint(left, flippedTop)];
+        [path1 lineToPoint:NSMakePoint(left, flippedBottom)];
+        [path2 moveToPoint:NSMakePoint(right, flippedTop)];
+        [path2 lineToPoint:NSMakePoint(right, flippedBottom)];
+    }
+    [path1 closePath];
+    [path2 closePath];
+    [path1 stroke];
+    [path2 stroke];
 }
 
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
