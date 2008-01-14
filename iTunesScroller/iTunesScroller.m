@@ -96,11 +96,14 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 	//NSLog(@"drawKnobSlotInRect:highlight:%d", flag);
 	
     if ([self isVertical]) {
-        [[NSColor lightGrayColor] set];
+        NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
+                                                              endingColor:[NSColor whiteColor]] autorelease];
+        [gradient drawInRect:rect angle:90.];
     } else {
-        [[NSColor blueColor] set];
+        NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
+                                                              endingColor:[NSColor whiteColor]] autorelease];
+        [gradient drawInRect:rect angle:0.];
     }
-	NSRectFill(rect);
 }
 
 @end
