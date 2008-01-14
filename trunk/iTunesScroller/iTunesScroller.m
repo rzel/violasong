@@ -63,6 +63,22 @@ if (highlight) {
 }
 #endif
 
+static void drawFlippedUpArrow(NSRect rect) {
+    float top = NSMinY(rect);
+	float left = NSMinX(rect);
+	float bottom = NSMaxY(rect);
+	float right = NSMaxX(rect);
+    
+    NSBezierPath *path = [NSBezierPath bezierPath];
+    [path moveToPoint:NSMakePoint(left, bottom)];
+    [path lineToPoint:NSMakePoint(left + ((right - left)/2), top)];
+    [path lineToPoint:NSMakePoint(right, bottom)];
+    [path lineToPoint:NSMakePoint(left, bottom)];
+    [path closePath];
+    [path setLineWidth:0.5];
+    [path stroke];
+}
+
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
     //NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
     
@@ -86,6 +102,8 @@ if (highlight) {
                 //  Left arrow.
             } else {
                 //  Up arrow.
+                NSEraseRect(partRect);
+                drawFlippedUpArrow(NSInsetRect(partRect, 4., 4.));
             }
         }   break;
         case NSScrollerKnobSlot: {
