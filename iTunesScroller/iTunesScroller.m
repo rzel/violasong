@@ -58,12 +58,34 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
     //NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
     
 	NSRect partRect = [self rectForPart:part];
-	NSEraseRect(partRect);
-	[[NSColor orangeColor] set];
-	NSFrameRect(partRect);
-	if (highlight) {
-		NSRectFill(partRect);
-	}
+    
+    switch (part) {
+        case NSScrollerNoPart: {
+        }   break;
+        case NSScrollerDecrementPage: {
+        }   break;
+        case NSScrollerKnob: {
+        }   break;
+        case NSScrollerIncrementPage: {
+        }   break;
+        case NSScrollerDecrementLine: {
+        }   break;
+        case NSScrollerIncrementLine: {
+        }   break;
+        case NSScrollerKnobSlot: {
+            if ([self isVertical]) {
+                NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
+                                                                      endingColor:[NSColor whiteColor]] autorelease];
+                [gradient drawInRect:partRect angle:90.];
+            } else {
+                NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
+                                                                      endingColor:[NSColor whiteColor]] autorelease];
+                [gradient drawInRect:partRect angle:0.];
+            }
+        }   break;
+        default:
+            NSAssert2(false, @"unknown NSScrollerPart: %d (%@)", part, NSScrollerPartDescription(part));
+    }
 }
 
 - (void)drawArrow:(NSScrollerArrow)arrow highlightPart:(NSScrollerArrow)highlightPart {
@@ -84,26 +106,12 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 }
 
 - (void)drawKnob {
-	//NSLog(@"drawKnob");
-	
-	//[[NSColor blueColor] set];
-	//NSRectFill([self rectForPart:NSScrollerKnob]);
 	[self drawPart:NSScrollerKnob highlight:NO];
 }
 
 - (void)drawKnobSlotInRect:(NSRect)rect highlight:(BOOL)highlight_ {
     NSAssert(!highlight_, @"apparently -drawKnobSlotInRect:highlight:'s highlight IS sometimes set");
-	//NSLog(@"drawKnobSlotInRect:highlight:%d", flag);
-	
-    if ([self isVertical]) {
-        NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
-                                                              endingColor:[NSColor whiteColor]] autorelease];
-        [gradient drawInRect:rect angle:90.];
-    } else {
-        NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
-                                                              endingColor:[NSColor whiteColor]] autorelease];
-        [gradient drawInRect:rect angle:0.];
-    }
+    [self drawPart:NSScrollerKnobSlot highlight:NO];
 }
 
 @end
