@@ -54,25 +54,46 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
     return NSHeight(bounds) < NSWidth(bounds);
 }
 
+#if 0
+NSEraseRect(partRect);
+[[NSColor orangeColor] set];
+NSFrameRect(partRect);
+if (highlight) {
+    NSRectFill(partRect);
+}
+#endif
+
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
     //NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
     
 	NSRect partRect = [self rectForPart:part];
     
     switch (part) {
-        case NSScrollerNoPart: {
-        }   break;
-        case NSScrollerDecrementPage: {
-        }   break;
         case NSScrollerKnob: {
-        }   break;
-        case NSScrollerIncrementPage: {
-        }   break;
-        case NSScrollerDecrementLine: {
+            assert(!highlight); // TODO FIXME I don't know who sets this yet, but I haven't seen it happen yet. It *should*.
+            [[NSColor colorWithDeviceRed:0. green:0. blue:255/128 alpha:1.0] set];
+            NSRectFill(partRect);
+        }   break; {
+            NSAssert(NO, "-[iTunesScroller drawPart:%@ highlight:] => no implementation: this w"); // Seemingly never called
+        }   break; {
+            NSAssert(NO, "NSScrollerIncrementPage"); // Seemingly never called
         }   break;
         case NSScrollerIncrementLine: {
+            if ([self isVertical]) {
+                //  Right arrow.
+            } else {
+                //  Down arrow.
+            }
+        }   break;
+        case NSScrollerDecrementLine: {
+            if ([self isVertical]) {
+                //  Left arrow.
+            } else {
+                //  Up arrow.
+            }
         }   break;
         case NSScrollerKnobSlot: {
+            NSAssert(!highlight, nil); // I never expect this to be set.
             if ([self isVertical]) {
                 NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
                                                                       endingColor:[NSColor whiteColor]] autorelease];
@@ -83,8 +104,13 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
                 [gradient drawInRect:partRect angle:0.];
             }
         }   break;
+        case NSScrollerNoPart:
+        case NSScrollerDecrementPage:
+        case NSScrollerIncrementPage:
+            NSAssert(NO, "-[iTunesScroller drawPart:%@ highlight:] => unexpected drawPart.", NSScrollerPartDescription(part));
+            break;
         default:
-            NSAssert2(false, @"unknown NSScrollerPart: %d (%@)", part, NSScrollerPartDescription(part));
+            NSAssert2(NO, @"unknown NSScrollerPart: %d (%@)", part, NSScrollerPartDescription(part));
     }
 }
 
