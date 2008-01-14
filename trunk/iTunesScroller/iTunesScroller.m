@@ -111,6 +111,12 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
     [path fill];
 }
 
+- (void)drawRect:(NSRect)rect {
+    [super drawRect:rect];
+    [[NSColor colorWithDeviceRed:0. green:0. blue:0. alpha:0.35] set];
+     NSFrameRectWithWidthUsingOperation([self bounds], 1.0, NSCompositeSourceOver);
+}
+
 - (void)drawPart:(NSScrollerPart)part highlight:(BOOL)highlight {
     //NSLog(@"drawPart:%@ highlight:%@", NSScrollerPartDescription(part), highlight ? @"YES":@"NO");
     
@@ -119,6 +125,8 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
     switch (part) {
         case NSScrollerKnob: {
             assert(!highlight); // TODO FIXME I don't know who sets this yet, but I haven't seen it happen yet. It *should*.
+            
+            // FIXME -rectForPart:NSScrollerKnob lies: fix it.
             [[NSColor colorWithDeviceRed:0. green:0. blue:255/128 alpha:1.0] set];
             NSRectFill(partRect);
         }   break;
