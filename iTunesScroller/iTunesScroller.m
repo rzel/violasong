@@ -47,6 +47,51 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 	}
 }
 
+typedef enum {
+    DoubleBothScrollBarVariant,
+    SingleScrollBarVariant,
+    DoubleMaxScrollBarVariant
+}   AppleScrollBarVariant;
+
+@interface AppleScrollBarVariantHelper : NSObject {
+    AppleScrollBarVariant varient;
+}
++ (AppleScrollBarVariant)currentVariant;
+@end
+@implementation AppleScrollBarVariantHelper
+
+static AppleScrollBarVariant variantStringToEnum(NSString *variant_) {
+    if ([variant_ isEqualToString:@"DoubleBoth"]) {
+        return DoubleBothScrollBarVariant;
+    } else if ([variant_ isEqualToString:@"Single"]) {
+        return SingleScrollBarVariant;
+    } else if ([variant_ isEqualToString:@"DoubleMax"]) {
+        return DoubleMaxScrollBarVariant;
+    } else {
+        NSCAssert1(NO, @"unknown AppleScrollBarVariant: %@", variant_);
+        return -1;
+    }
+}
+
++ (AppleScrollBarVariant)currentVariant {
+    static AppleScrollBarVariantHelper *helper = nil;
+    if (!helper) {
+        helper = [[AppleScrollBarVariantHelper alloc] init];
+        helper->varient = variantStringToEnum([[[[NSUserDefaults alloc] init] autorelease] stringForKey:@"AppleScrollBarVariant"]);
+        [[NSDistributedNotificationCenter defaultCenter] addObserver:helper
+                                                            selector:@selector(appleAquaScrollBarVariantChanged:)
+                                                                name:@"AppleAquaScrollBarVariantChanged"
+                                                                object:nil];
+    }
+    return helper->varient;
+}
+
+- (void)appleAquaScrollBarVariantChanged:(NSNotification*)notification_ {
+    varient = variantStringToEnum([[[[NSUserDefaults alloc] init] autorelease] stringForKey:@"AppleScrollBarVariant"]);
+}
+
+@end
+
 @implementation iTunesScroller
 
 - (BOOL)isVertical {
@@ -152,17 +197,35 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
         }   break;
         case NSScrollerKnobSlot: {
             NSAssert(!highlight, nil); // I never expect this to be set.
-#if 1
+#if 0
             [[NSColor darkGrayColor] set];
             NSRectFill(partRect);
 #else
             if ([self isVertical]) {
-                NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
-                                                                      endingColor:[NSColor whiteColor]] autorelease];
+               NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
+										 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
+										 [NSColor colorWithDeviceRed:(186.0/255.0) green:(186/255.0) blue:(186/255.0) alpha:1.0], 0.06,
+										 [NSColor colorWithDeviceRed:(219.0/255.0) green:(219/255.0) blue:(219/255.0) alpha:1.0], 0.2,
+										 [NSColor colorWithDeviceRed:(230.0/255.0) green:(230/255.0) blue:(230/255.0) alpha:1.0], 0.33,
+										 [NSColor colorWithDeviceRed:(240.0/255.0) green:(240/255.0) blue:(240/255.0) alpha:1.0], 0.66,
+										 [NSColor colorWithDeviceRed:(223.0/255.0) green:(223/255.0) blue:(223/255.0) alpha:1.0], 0.8,
+										 [NSColor colorWithDeviceRed:(204.0/255.0) green:(204/255.0) blue:(204/255.0) alpha:1.0], 0.86,
+										 [NSColor colorWithDeviceRed:(178.0/255.0) green:(178/255.0) blue:(178/255.0) alpha:1.0], 1.0,
+										 nil                                                   										 
+										 ] autorelease];
                 [gradient drawInRect:partRect angle:90.];
             } else {
-                NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:[NSColor lightGrayColor]
-                                                                      endingColor:[NSColor whiteColor]] autorelease];
+                NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
+										 [NSColor colorWithDeviceRed:(161.0/255.0) green:(161/255.0) blue:(161/255.0) alpha:1.0], 0.0,
+										 [NSColor colorWithDeviceRed:(186.0/255.0) green:(186/255.0) blue:(186/255.0) alpha:1.0], 0.06,
+										 [NSColor colorWithDeviceRed:(219.0/255.0) green:(219/255.0) blue:(219/255.0) alpha:1.0], 0.2,
+										 [NSColor colorWithDeviceRed:(230.0/255.0) green:(230/255.0) blue:(230/255.0) alpha:1.0], 0.33,
+										 [NSColor colorWithDeviceRed:(240.0/255.0) green:(240/255.0) blue:(240/255.0) alpha:1.0], 0.66,
+										 [NSColor colorWithDeviceRed:(223.0/255.0) green:(223/255.0) blue:(223/255.0) alpha:1.0], 0.8,
+										 [NSColor colorWithDeviceRed:(204.0/255.0) green:(204/255.0) blue:(204/255.0) alpha:1.0], 0.86,
+										 [NSColor colorWithDeviceRed:(178.0/255.0) green:(178/255.0) blue:(178/255.0) alpha:1.0], 1.0,
+										 nil                                                   										 
+										 ] autorelease];
                 [gradient drawInRect:partRect angle:0.];
             }
 #endif
