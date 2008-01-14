@@ -48,9 +48,9 @@ static NSString* NSScrollerArrowDescription(NSScrollerArrow arrow) {
 }
 
 typedef enum {
-    DoubleBothScrollBarVariant,
-    SingleScrollBarVariant,
-    DoubleMaxScrollBarVariant
+    SingleScrollBarVariant, // SysPrefs > Appearance > Place scroll arrows > At top and bottom (option).
+    DoubleMaxScrollBarVariant, // SysPrefs > Appearance > Place scroll arrows > Together (default on 10.5).
+    DoubleBothScrollBarVariant, // Only settable via `defaults write "Apple Global Domain" AppleScrollBarVariant DoubleBoth`.
 }   AppleScrollBarVariant;
 
 @interface AppleScrollBarVariantHelper : NSObject {
