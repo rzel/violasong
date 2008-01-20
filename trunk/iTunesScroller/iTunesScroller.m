@@ -193,9 +193,21 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
         case NSScrollerKnob: {
             assert(!highlight); // TODO FIXME I don't know who sets this yet, but I haven't seen it happen yet. It *should*.
             
+            if ([self isVertical]) {
+                partRect.origin.y++;
+                partRect.size.height -= 2;
+            } else {
+                // FIXME really vertical
+                partRect.origin.x++;
+                partRect.size.width -= 2;
+            }
+            
             // FIXME -rectForPart:NSScrollerKnob lies: fix it.
             [[NSColor colorWithDeviceRed:0. green:0. blue:255/128 alpha:1.0] set];
-            NSRectFill(partRect);
+            [[NSBezierPath bezierPathWithRoundedRect:partRect
+                                             xRadius:6.0
+                                             yRadius:6.0] fill];
+            //NSRectFill(partRect);
         }   break;
         case NSScrollerIncrementLine: {
             if ([self isVertical]) {
