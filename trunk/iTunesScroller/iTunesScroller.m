@@ -194,8 +194,8 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             assert(!highlight); // TODO FIXME I don't know who sets this yet, but I haven't seen it happen yet. It *should*.
             
             if ([self isVertical]) {
-                partRect.origin.y += 2;
-                partRect.size.height -= 4;
+                partRect.origin.y++;
+                partRect.size.height -= 2;
             } else {
                 // FIXME really vertical
                 partRect.origin.x++;
@@ -204,12 +204,24 @@ static void drawFlippedArrow(NSRect rect, ArrowDirection direction) {
             
             // FIXME -rectForPart:NSScrollerKnob lies: fix it.
             NSBezierPath *knobPath = [NSBezierPath bezierPathWithRoundedRect:partRect
-                                                                     xRadius:5.0
-                                                                     yRadius:5.0];
+                                                                     xRadius:6.0
+                                                                     yRadius:6.0];
+
             [[NSColor colorWithDeviceRed:89./255. green:105./255. blue:131./255. alpha:1.] set];
-            [knobPath setLineWidth:1.50];
-            [knobPath stroke];
-            [knobPath fill];
+			
+			NSGradient *gradient = [[[NSGradient alloc] initWithColorsAndLocations:
+									 [NSColor colorWithDeviceRed:(89.0/255.0) green:(105/255.0) blue:(131/255.0) alpha:1.0], 0.0,
+									 [NSColor colorWithDeviceRed:(89.0/255.0) green:(105/255.0) blue:(131/255.0) alpha:1.0], 0.0768,
+									 [NSColor colorWithDeviceRed:(154.0/255.0) green:(169/255.0) blue:(190/255.0) alpha:1.0], 0.0769,
+									 [NSColor colorWithDeviceRed:(94.0/255.0) green:(113/255.0) blue:(144/255.0) alpha:1.0], 0.9231,
+									 [NSColor colorWithDeviceRed:(61.0/255.0) green:(80/255.0) blue:(111/255.0) alpha:1.0], 0.9232,
+									 [NSColor colorWithDeviceRed:(61.0/255.0) green:(80/255.0) blue:(111/255.0) alpha:1.0], 1.0,
+									 nil
+									 ] autorelease];
+//            [knobPath setLineWidth:2.0];
+//            [knobPath stroke];
+			[gradient drawInBezierPath:knobPath
+								 angle:[self isVertical] ? 90. : 0.];
             
             //--
             
