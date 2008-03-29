@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {catBell = id; }; 
+            CLASS = VWCatBell; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {stickyWindow = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = VWCatView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = VWCatWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {
+            ACTIONS = {changeColor = id; }; 
+            CLASS = VWStickyController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {catView = id; inputField = id; stickyWindow = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = VWStickyWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }
+    ); 
+    IBVersion = 1; 
+}
