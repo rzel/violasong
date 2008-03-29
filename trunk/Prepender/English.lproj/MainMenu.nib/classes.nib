@@ -1,0 +1,16 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = Prepender; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {clear = id; prepend = id; unprepend = id; }; 
+            CLASS = PrependerController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inputField = NSTextView; prepender = Prepender; unprepender = Unprepender; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = Un; LANGUAGE = ObjC; SUPERCLASS = NSTabViewItem; }, 
+        {CLASS = Unprepender; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
